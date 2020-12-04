@@ -4,4 +4,6 @@ export interface UserModel {
   email: string;
   phone: string;
   photoUrl: string;
+  isBaned: boolean;
+  isPaid: boolean;
 }
