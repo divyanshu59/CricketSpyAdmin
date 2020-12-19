@@ -18,11 +18,13 @@ import { AngularFireModule } from '@angular/fire';
 import { RouterModule } from '@angular/router';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './ui/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    AddMatchComponent
+    AddMatchComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
