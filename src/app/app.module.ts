@@ -4,19 +4,20 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsersComponent } from './ui/users/users.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatTableModule} from '@angular/material/table';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSortModule} from '@angular/material/sort';
-import {MatInputModule} from '@angular/material/input';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { AddMatchComponent } from './ui/add-match/add-match.component';
-import {MatButtonModule} from '@angular/material/button';
-import {RoutingModule} from './core/module/routing.module';
-import {AngularFireModule} from '@angular/fire';
-import {RouterModule} from '@angular/router';
-
+import { MatButtonModule } from '@angular/material/button';
+import { RoutingModule } from './core/module/routing.module';
+import { AngularFireModule } from '@angular/fire';
+import { RouterModule } from '@angular/router';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,9 @@ import {RouterModule} from '@angular/router';
     RoutingModule,
     MatSortModule,
     MatInputModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
+    FormsModule,
     AngularFireModule.initializeApp({
       apiKey: 'AIzaSyBWawKOXyf9_buQJZe7rCRGLZzYtxrHxgA',
       authDomain: 'cricketspy-55ffb.firebaseapp.com',

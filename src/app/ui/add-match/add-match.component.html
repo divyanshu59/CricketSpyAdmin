@@ -1,2 +1,48 @@
-<p>add-match works!</p>
-<button mat-button (click)="addNewMatch()">Click to add</button>
+<div class="form">
+    <h2>New Match</h2>
+
+    <mat-form-field [(ngModel)]="team1Name" class="view50" appearance="legacy" ngDefaultControl>
+        <mat-label>Enter Team 1 Name</mat-label>
+        <input matInput placeholder="Hint: Team India">
+    </mat-form-field>
+
+
+    <input type="file" id="file" class="view50" accept="image/*" />
+    <label for="file" class="btn-3">
+        <span>Team 1 Icon</span>
+    </label>
+
+    <br>
+    <mat-form-field [(ngModel)]="team2Name" class="view50" appearance="legacy" ngDefaultControl>
+        <mat-label>Enter Team 2 Name</mat-label>
+        <input matInput placeholder="Hint: Team India">
+    </mat-form-field>
+
+    <input type="file" id="file" class="view50" accept="image/*" />
+    <label for="file" class="btn-3">
+        <span>Team 2 Icon</span>
+    </label>
+
+    <br>
+    <mat-form-field [(ngModel)]="sportName" class="view50" appearance="legacy" ngDefaultControl>
+        <mat-label>Sport Name</mat-label>
+        <input matInput placeholder="Hint: Football">
+    </mat-form-field>
+
+
+    <input type="file" id="file" class="view50" accept="image/*" />
+    <label for="file" class="btn-3">
+        <span>Featured Image</span>
+    </label>
+
+    <br>
+
+    <input id="dateTimeSelector" [(ngModel)]="scheduledDate" [owlDateTime]="fromdatepicker" class="view50">
+    <owl-date-time #fromdatepicker></owl-date-time>
+    <span [owlDateTimeTrigger]="fromdatepicker" id="datebutton" class="trigger">
+        <mat-icon id="datebuttonicon" aria-hidden="false">book_online</mat-icon>
+    </span>
+    <br>
+
+    <button mat-flat-button (click)="addNewMatch()">Add Match</button>
+</div>
