@@ -1,6 +1,5 @@
 <mat-card class="card">
   <mat-card-content>
-
     <div class="example-container mat-elevation-z0">
       <div class="header">
         <mat-form-field>
@@ -15,60 +14,23 @@
 
         <ng-container matColumnDef="name">
           <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
-          <mat-cell [routerLink]="['/overview-appointment', appointment.id ]" *matCellDef="let appointment">
-            {{ appointment.user.name }}
-
+          <mat-cell [routerLink]="['/overview-appointment', user.id ]" *matCellDef="let user">
+            {{ user.name }}
           </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="appointmentTime">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Appointment Time</mat-header-cell>
-          <mat-cell *matCellDef="let appointment">
-            {{ appointment.appointmentTime.toDate().toISOString().slice(0,10) }}
-          </mat-cell>
-        </ng-container>
-
-
-        <ng-container matColumnDef="notes">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Notes</mat-header-cell>
-          <mat-cell *matCellDef="let appointment">
-            {{ appointment.notes }}
-          </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="symptoms">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Symptoms</mat-header-cell>
-          <mat-cell *matCellDef="let appointment">
-            <div style="padding: 2px;" *ngFor="let symptoms of appointment.symptoms">
-              {{ symptoms }}
-            </div>
+        <ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+          <mat-cell *matCellDef="let user">
+            {{ user.email }}
           </mat-cell>
         </ng-container>
 
 
-        <ng-container matColumnDef="emergency">
-          <mat-header-cell *matHeaderCellDef>Emergency</mat-header-cell>
-          <mat-cell *matCellDef="let appointment">
-            <mat-icon aria-hidden="false" style="color: red;" *ngIf="appointment.emergency">check_box
-            </mat-icon>
-            <mat-icon aria-hidden="false" style="color: green;" *ngIf="!appointment.emergency">
-              check_box_outline_blank</mat-icon>
-          </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="status">
-          <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
-          <mat-cell *matCellDef="let appointment">
-
-            <mat-icon aria-hidden="false" *ngIf="appointment.status == 0" style="color: orange;"
-                      matTooltip="Pending">
-              assignment_late</mat-icon>
-            <mat-icon aria-hidden="false" *ngIf="appointment.status == 1" style="color: blue;"
-                      matTooltip="Active">assignment_ind
-            </mat-icon>
-            <mat-icon aria-hidden="false" *ngIf="appointment.status == 2" style="color: green;"
-                      matTooltip="Completed">
-              assignment_turned_in</mat-icon>
+        <ng-container matColumnDef="phone">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Phone</mat-header-cell>
+          <mat-cell *matCellDef="let user">
+            {{ user.phone }}
           </mat-cell>
         </ng-container>
 
