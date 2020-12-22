@@ -15,6 +15,7 @@ import { AddMatchComponent } from './ui/add-match/add-match.component';
 import { MatButtonModule } from '@angular/material/button';
 import { RoutingModule } from './core/module/routing.module';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { RouterModule } from '@angular/router';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
 import { FormsModule } from '@angular/forms';
@@ -50,6 +51,7 @@ import { LoginComponent } from './ui/login/login.component';
       appId: '1:61333460471:web:652c22e04fae6ef07a8af2',
       measurementId: 'G-DM3EJSN9N5'
     }),
+    AngularFireStorageModule,
     MatTooltipModule,
     MatButtonModule,
     RouterModule,
