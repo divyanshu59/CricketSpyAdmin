@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {MatchService} from '../../service/match.service';
-import {MatchModel} from '../../model/match.model';
-import {TeamModel} from '../../model/team.model';
+import { Component, OnInit } from '@angular/core';
+import { MatchService } from '../../service/match.service';
+import { MatchModel } from '../../model/match.model';
+import { TeamModel } from '../../model/team.model';
 import firebase from 'firebase';
 import Timestamp = firebase.firestore.Timestamp;
+import { ImageService } from 'src/app/service/image.service';
 
 @Component({
   selector: 'app-add-match',
@@ -11,8 +12,15 @@ import Timestamp = firebase.firestore.Timestamp;
   styleUrls: ['./add-match.component.css']
 })
 export class AddMatchComponent implements OnInit {
+  scheduledDate = new Date();
+  team1Name: string = '';
+  team2Name: string = '';
+  sportName: string = '';
+  featureImage: string = '';
+  team1Image: string = '';
+  team2Image: string = '';
 
-  constructor(private matchService: MatchService) {
+  constructor(private matchService: MatchService, private imageService: ImageService) {
   }
 
   ngOnInit(): void {
@@ -22,18 +30,45 @@ export class AddMatchComponent implements OnInit {
     this.matchService.addEvent({
       id: null,
       team1: {
-        name: 'India',
-        icon: 'https://cdn.countryflags.com/thumbs/india/flag-400.png'
+        name: this.team1Name,
+        icon: this.team1Image,
       } as TeamModel,
       team2: {
-        name: 'Pakistan',
-        icon: 'https://cdn.webshopapp.com/shops/94414/files/54939500/pakistan-flag-icon-free-download.jpg'
+        name: this.team2Name,
+        icon: this.team2Image
       } as TeamModel,
-      scheduledDateTime: Timestamp.fromMillis(Date.UTC(2020, 12, 4, 12, 50, 0)),
+      featuredImage: this.featureImage,
+      title: this.sportName,
+      scheduledDateTime: Timestamp.fromDate(this.scheduledDate),
       addedDateTime: Timestamp.now()
     } as MatchModel).then(_ => {
       console.log('new event added')
+      this.team1Name = '';
+      this.team2Name = '';
+      this.sportName = '';
     });
+  }
+
+
+  async uploadImage(event) {
+    return this.imageService.uploadImage(event.target.files[0]).then(imageUrl => {
+      console.log(imageUrl)
+      return imageUrl;
+    }).catch(e => {
+      console.log(e);
+      return null;
+    });
+  }
+
+
+  async uploadFeatureImage(event) {
+    this.featureImage = await this.uploadImage(event);
+  }
+  async uploadTeam1Image(event) {
+    this.team1Image = await this.uploadImage(event);
+  }
+  async uploadTeam2Image(event) {
+    this.team2Image = await this.uploadImage(event);
   }
 
 }

@@ -4,24 +4,28 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsersComponent } from './ui/users/users.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatTableModule} from '@angular/material/table';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSortModule} from '@angular/material/sort';
-import {MatInputModule} from '@angular/material/input';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { AddMatchComponent } from './ui/add-match/add-match.component';
-import {MatButtonModule} from '@angular/material/button';
-import {RoutingModule} from './core/module/routing.module';
-import {AngularFireModule} from '@angular/fire';
-import {RouterModule} from '@angular/router';
-
+import { MatButtonModule } from '@angular/material/button';
+import { RoutingModule } from './core/module/routing.module';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { RouterModule } from '@angular/router';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './ui/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    AddMatchComponent
+    AddMatchComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,9 @@ import {RouterModule} from '@angular/router';
     RoutingModule,
     MatSortModule,
     MatInputModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
+    FormsModule,
     AngularFireModule.initializeApp({
       apiKey: 'AIzaSyBWawKOXyf9_buQJZe7rCRGLZzYtxrHxgA',
       authDomain: 'cricketspy-55ffb.firebaseapp.com',
@@ -44,6 +51,7 @@ import {RouterModule} from '@angular/router';
       appId: '1:61333460471:web:652c22e04fae6ef07a8af2',
       measurementId: 'G-DM3EJSN9N5'
     }),
+    AngularFireStorageModule,
     MatTooltipModule,
     MatButtonModule,
     RouterModule,

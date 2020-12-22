@@ -1,4 +1,4 @@
-import {TeamModel} from './team.model';
+import { TeamModel } from './team.model';
 import firebase from 'firebase';
 import Timestamp = firebase.firestore.Timestamp;
 
@@ -8,4 +8,6 @@ export interface MatchModel {
   team2: TeamModel;
   scheduledDateTime: Timestamp;
   addedDateTime: Timestamp;
+  featuredImage: string;
+  title: string;
 }
