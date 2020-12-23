@@ -8,12 +8,12 @@ import {MatchModel} from '../model/match.model';
 })
 export class MatchService {
 
-  events$: Observable<MatchModel>
+  events$: Observable<MatchModel>;
 
   constructor(private db: AngularFirestore) { }
 
-  addEvent(match: MatchModel){
-    let docRef = this.db.collection('events').doc().ref;
+  addEvent(match: MatchModel): Promise<void>{
+    const docRef = this.db.collection('events').doc().ref;
     match.id = docRef.id;
     return docRef.set(match);
   }
