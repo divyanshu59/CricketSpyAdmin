@@ -1,0 +1,18 @@
+.sidebar-25 {
+    min-height: 90vh;
+}
+
+.sidebar-25 .left {
+    width: 25%;
+    padding: 2%;
+    background-color: white;
+}
+
+.sidebar-25 .left .btn {
+    padding: 6px;
+    margin-bottom: 10px;
+    background-color: #ee6d9e;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+}
