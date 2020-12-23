@@ -7,6 +7,7 @@ import { LoginComponent } from 'src/app/ui/pages/login/login.component';
 import { MatchComponent } from 'src/app/ui/pages/match/match.component';
 import { HomeComponent } from 'src/app/ui/pages/home/home.component';
 import { NotFoundComponent } from 'src/app/ui/widget/not-found/not-found.component';
+import {MatchOverviewComponent} from '../../ui/pages/match-overview/match-overview.component';
 
 const routes = [
   {
@@ -36,6 +37,10 @@ const routes = [
   {
     path: 'logout',
     component: LoginComponent,
+  },
+  {
+    path: 'match-overview/:id',
+    component: MatchOverviewComponent,
   },
   {
     path: '**',

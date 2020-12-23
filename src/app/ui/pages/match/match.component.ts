@@ -46,7 +46,13 @@ export class MatchComponent implements OnInit {
       this.dataSource.sortingDataAccessor = (item, property) => {
         switch (property) {
           case 'title':
-            return item.user.title;
+            return item.title;
+          case 'team1':
+            return item.team1.name;
+          case 'team2':
+            return item.team2.name;
+          case 'scheduledDate':
+            return item.scheduledDateTime;
           default:
             return item[property];
         }

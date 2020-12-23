@@ -14,7 +14,7 @@
 
         <ng-container matColumnDef="title">
           <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
-          <mat-cell *matCellDef="let event">
+          <mat-cell [routerLink]="['/match-overview', event.id ]" *matCellDef="let event">
             {{ event.title }}
           </mat-cell>
         </ng-container>
