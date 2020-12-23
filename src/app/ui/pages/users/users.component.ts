@@ -3,7 +3,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {AngularFireAuth} from '@angular/fire/auth';
-import {UserModel} from '../../model/user.model';
+import {UserModel} from '../../../model/user.model';
 
 @Component({
   selector: 'app-users',

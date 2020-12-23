@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UsersComponent } from './ui/users/users.component';
+import { UsersComponent } from './ui/pages/users/users.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { AddMatchComponent } from './ui/add-match/add-match.component';
+import { AddMatchComponent } from './ui/pages/add-match/add-match.component';
 import { MatButtonModule } from '@angular/material/button';
 import { RoutingModule } from './core/module/routing.module';
 import { AngularFireModule } from '@angular/fire';
@@ -19,13 +19,15 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { RouterModule } from '@angular/router';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from '@danielmoncada/angular-datetime-picker';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './ui/login/login.component';
+import { LoginComponent } from './ui/pages/login/login.component';
+import { ToolbarComponent } from './ui/widget/toolbar/toolbar.component';
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     AddMatchComponent,
-    LoginComponent
+    LoginComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

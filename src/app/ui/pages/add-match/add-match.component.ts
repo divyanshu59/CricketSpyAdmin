@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatchService } from '../../service/match.service';
-import { MatchModel } from '../../model/match.model';
-import { TeamModel } from '../../model/team.model';
+import { MatchService } from '../../../service/match.service';
+import { MatchModel } from '../../../model/match.model';
+import { TeamModel } from '../../../model/team.model';
 import firebase from 'firebase';
 import Timestamp = firebase.firestore.Timestamp;
 import { ImageService } from 'src/app/service/image.service';

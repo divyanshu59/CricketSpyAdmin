@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule as Router}  from '@angular/router';
-import {UsersComponent} from '../../ui/users/users.component';
-import {AddMatchComponent} from '../../ui/add-match/add-match.component';
+import { RouterModule as Router } from '@angular/router';
+import { UsersComponent } from '../../ui/pages/users/users.component';
+import { AddMatchComponent } from '../../ui/pages/add-match/add-match.component';
 
 const routes = [
   {
