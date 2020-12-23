@@ -1,1 +1,22 @@
-<p>login works!</p>
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Login To Admin Panel</mat-card-title>
+            <hr>
+        </mat-card-header>
+
+        <mat-card-content>
+            <mat-form-field appearance="fill" class="fill">
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="pat@example.com" [(ngModel)]="email" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="fill">
+                <mat-label>Enter your password</mat-label>
+                <input matInput placeholder="*******" [(ngModel)]="password" required>
+            </mat-form-field>
+            <button mat-flat-button (click)="login()">Login Now</button>
+
+        </mat-card-content>
+    </mat-card>
+</div>

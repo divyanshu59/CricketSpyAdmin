@@ -35,7 +35,7 @@ const routes = [
   },
   {
     path: 'logout',
-    component: AddMatchComponent
+    component: LoginComponent,
   },
   {
     path: '**',
