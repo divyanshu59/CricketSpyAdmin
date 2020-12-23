@@ -1,0 +1,14 @@
+<mat-drawer-container class="sidebar-25">
+    <mat-drawer mode="side" class="left" opened>
+        <button mat-flat-button [routerLink]="['/']" class="btn">Home</button>
+        <button mat-flat-button [routerLink]="['/user']" class="btn">Users</button>
+        <button mat-flat-button [routerLink]="['/match']" class="btn">Match</button>
+        <button mat-flat-button [routerLink]="['/add-match']" class="btn">Add Match</button>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet>
+
+        </router-outlet>
+
+    </mat-drawer-content>
+</mat-drawer-container>

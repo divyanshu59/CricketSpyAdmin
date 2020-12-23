@@ -1,0 +1,12 @@
+.container {
+    margin: 10% 20%;
+}
+
+.fill {
+    width: 100%;
+}
+
+button {
+    background-color: #51b9fa;
+    color: white;
+}

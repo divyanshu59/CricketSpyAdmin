@@ -1,0 +1,7 @@
+.topBar {
+    background-color: #51b9fa;
+    color: white;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}

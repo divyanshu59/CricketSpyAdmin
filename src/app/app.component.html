@@ -1,1 +1,7 @@
-<router-outlet></router-outlet>
+<app-toolbar></app-toolbar>
+
+<app-sidenav *ngIf="isLogin; else loginView"></app-sidenav>
+
+<ng-template #loginView>
+    <app-login></app-login>
+</ng-template>

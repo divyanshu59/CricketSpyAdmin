@@ -1,0 +1,13 @@
+<mat-toolbar class="topBar">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Criket Spy</span>
+    <span class="example-spacer"></span>
+
+    <div [routerLink]="['/add-match']">
+        <button mat-icon-button class="example-icon" aria-label="Logout Now">
+            <mat-icon [routerLink]="['/logout']">logout</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>

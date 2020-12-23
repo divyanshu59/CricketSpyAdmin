@@ -14,14 +14,14 @@
 h2 {
     font-size: 2rem;
     text-decoration: underline;
-    text-decoration-color: #ae144f;
+    text-decoration-color: #51b9fa;
     text-decoration-thickness: 4px;
     text-underline-offset: 4px;
     text-underline-position: above;
 }
 
 button {
-    background-color: #ae144f;
+    background-color: #51b9fa;
     color: white;
     padding: 0.5rem 20%;
 }
@@ -33,7 +33,7 @@ button {
 }
 
 #datebutton {
-    background-color: #ee6d9e;
+    background-color: #51b9fa;
     color: white;
     padding: 0.8rem 100px;
     padding-top: 20px;
@@ -69,7 +69,7 @@ button {
     background-color: #d3460d;
 }
 [type="file"] + label.btn-3 {
-    background-color: #ee6d9e;
+    background-color: #51b9fa;
     border-radius: 0;
     overflow: hidden;
 }
@@ -94,7 +94,7 @@ button {
     width: 100%;
 }
 [type="file"] + label.btn-3:hover {
-    background-color: #ae144f;
+    background-color: #51b9fa;
 }
 [type="file"] + label.btn-3:hover span {
     transform: translateY(300%);
