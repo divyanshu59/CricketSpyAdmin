@@ -13,12 +13,12 @@ import { ImageService } from 'src/app/service/image.service';
 })
 export class AddMatchComponent implements OnInit {
   scheduledDate = new Date();
-  team1Name: string = '';
-  team2Name: string = '';
-  sportName: string = '';
-  featureImage: string = '';
-  team1Image: string = '';
-  team2Image: string = '';
+  team1Name = '';
+  team2Name = '';
+  sportName = '';
+  featureImage = '';
+  team1Image = '';
+  team2Image = '';
 
   constructor(private matchService: MatchService, private imageService: ImageService) {
   }
@@ -42,7 +42,7 @@ export class AddMatchComponent implements OnInit {
       scheduledDateTime: Timestamp.fromDate(this.scheduledDate),
       addedDateTime: Timestamp.now()
     } as MatchModel).then(_ => {
-      console.log('new event added')
+      console.log('new event added');
       this.team1Name = '';
       this.team2Name = '';
       this.sportName = '';
