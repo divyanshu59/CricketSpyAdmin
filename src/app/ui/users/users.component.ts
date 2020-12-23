@@ -3,7 +3,6 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {AngularFireAuth} from '@angular/fire/auth';
-import {MatDialog} from '@angular/material/dialog';
 import {UserModel} from '../../model/user.model';
 
 @Component({
@@ -12,14 +11,13 @@ import {UserModel} from '../../model/user.model';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  displayedColumns = ['name', 'appointmentTime', 'notes', 'symptoms', 'emergency', 'status'];
+  displayedColumns = ['name', 'email', 'phone'];
   dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private db: AngularFirestore, private auth: AngularFireAuth, public dialog: MatDialog) {
+  constructor(private db: AngularFirestore, private auth: AngularFireAuth) {
   }
-
 
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim();

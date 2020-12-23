@@ -8,9 +8,10 @@ import {UserModel} from '../model/user.model';
   providedIn: 'root'
 })
 export class UsersService {
-  user$: Observable<UserModel>;
+  user$: Observable<any>;
 
   constructor(private db: AngularFirestore, private  router: Router) {
+    this.user$ = db.collection('users').valueChanges();
   }
 
 }
