@@ -7,14 +7,11 @@
     padding: 2%;
     background-color: white;
 }
-.example-spacer {
-    flex: 1 1 auto;
-}
 
 .sidebar-25 .left .btn {
     padding: 6px;
     margin-bottom: 10px;
-    background-color: #ee6d9e;
+    background-color: #51b9fa;
     color: white;
     font-size: 20px;
     width: 100%;

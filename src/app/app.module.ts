@@ -15,6 +15,9 @@ import { LoginComponent } from './ui/pages/login/login.component';
 import { ToolbarComponent } from './ui/widget/toolbar/toolbar.component';
 import { SidenavComponent } from './ui/widget/sidenav/sidenav.component';
 import { MaterialModule } from './core/module/material.module';
+import { MatchComponent } from './ui/pages/match/match.component';
+import { HomeComponent } from './ui/pages/home/home.component';
+import { NotFoundComponent } from './ui/widget/not-found/not-found.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { MaterialModule } from './core/module/material.module';
     AddMatchComponent,
     LoginComponent,
     ToolbarComponent,
-    SidenavComponent
+    SidenavComponent,
+    MatchComponent,
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
