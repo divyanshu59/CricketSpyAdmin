@@ -1,9 +1,9 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatSort} from '@angular/material/sort';
-import {AngularFirestore} from '@angular/fire/firestore';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {UserModel} from '../../../model/user.model';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { UserModel } from '../../../model/user.model';
 
 @Component({
   selector: 'app-match',
@@ -18,6 +18,9 @@ export class MatchComponent implements OnInit {
 
   constructor(private db: AngularFirestore) {
   }
+
+
+  loading: Boolean = true;
 
   // tslint:disable-next-line:typedef
   applyFilter(filterValue: string) {
@@ -58,6 +61,8 @@ export class MatchComponent implements OnInit {
         }
       };
       this.dataSource.sort = this.sort;
+
+      this.loading = false;
     });
   }
 

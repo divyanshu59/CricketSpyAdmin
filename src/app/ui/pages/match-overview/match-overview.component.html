@@ -1,4 +1,6 @@
-<mat-card *ngIf="!isLoading; else loading " class="card">
+<app-loading *ngIf="isLoading"></app-loading>
+
+<mat-card class="card mainbody">
   <mat-card-content>
     <div class="example-container mat-elevation-z0">
       <div class="match-details">
@@ -36,8 +38,3 @@
 
   </mat-card-content>
 </mat-card>
-
-
-<ng-template #loading>
-  Loading please wait
-</ng-template>

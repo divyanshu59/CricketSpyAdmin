@@ -1,9 +1,9 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatSort} from '@angular/material/sort';
-import {AngularFirestore} from '@angular/fire/firestore';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {UserModel} from '../../../model/user.model';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { UserModel } from '../../../model/user.model';
 
 @Component({
   selector: 'app-users',
@@ -18,6 +18,8 @@ export class UsersComponent implements OnInit {
 
   constructor(private db: AngularFirestore, private auth: AngularFireAuth) {
   }
+
+  loading: Boolean = true;
 
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim();
@@ -50,7 +52,9 @@ export class UsersComponent implements OnInit {
         }
       };
       this.dataSource.sort = this.sort;
+      this.loading = false;
     });
+
   }
 
 

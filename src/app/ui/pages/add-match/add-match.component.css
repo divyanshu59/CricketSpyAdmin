@@ -9,6 +9,7 @@
     font-size: 18px;
     line-height: 1;
     text-align: center;
+    min-height: 80vh;
 }
 
 h2 {
