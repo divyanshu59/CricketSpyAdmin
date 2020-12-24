@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,8 @@ export class AppComponent {
   title = 'cricket-spy-admin';
 
   isLogin = true;
+
+
 }
+
+
