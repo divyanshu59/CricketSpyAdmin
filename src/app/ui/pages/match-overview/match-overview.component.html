@@ -1,0 +1,43 @@
+<mat-card *ngIf="!isLoading; else loading " class="card">
+  <mat-card-content>
+    <div class="example-container mat-elevation-z0">
+      <div class="match-details">
+        Name: {{this.event.title}}
+      </div>
+
+      <mat-table #table [dataSource]="dataSource" matSort [trackBy]="trackByUid" class="table animate">
+
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+          <mat-cell *matCellDef="let prediction">
+            {{ prediction.user.name }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="predictedTeamName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Predicted Team Name</mat-header-cell>
+          <mat-cell *matCellDef="let prediction">
+            {{ prediction.predictedTeamName }}
+          </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="predictedTime">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Predicted Time</mat-header-cell>
+          <mat-cell *matCellDef="let prediction">
+            {{ prediction.predictionTime.toDate() | date:'yyyy/MM/dd h:mm:ss a' }}
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" class="animate"></mat-row>
+      </mat-table>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+
+<ng-template #loading>
+  Loading please wait
+</ng-template>
