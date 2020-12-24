@@ -13,15 +13,17 @@ export class LoginComponent implements OnInit {
 
   email: string;
   password: string;
+  loading: boolean = false;
 
   ngOnInit(): void {
   }
 
   login(): void {
+    this.loading = true;
     this.authService.loginWithEmailAndPassword(this.email, this.password).then(displayName => {
       // User Logged In
       this.router.navigate(['']);
-
+      this.loading = false;
     }).catch(error => {
       console.log(error);
     });

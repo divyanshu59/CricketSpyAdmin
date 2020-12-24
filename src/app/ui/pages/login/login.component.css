@@ -2,6 +2,10 @@
     margin: 10% 20%;
 }
 
+.mainbody {
+    height: 80vh;
+}
+
 .fill {
     width: 100%;
 }
