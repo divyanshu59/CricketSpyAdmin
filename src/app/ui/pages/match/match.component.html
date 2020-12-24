@@ -1,1 +1,50 @@
-<p>match works!</p>
+<mat-card class="card">
+  <mat-card-content>
+    <div class="example-container mat-elevation-z0">
+      <div class="header">
+        <mat-form-field>
+          <label>
+            <input matInput (keyup)="this.applyFilter($event.target.value)" (focus)="setupFilter('title')"
+                   placeholder="Search">
+          </label>
+        </mat-form-field>
+      </div>
+
+      <mat-table #table [dataSource]="dataSource" matSort [trackBy]="trackByUid" class="table animate">
+
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
+          <mat-cell [routerLink]="['/match-overview', event.id ]" *matCellDef="let event">
+            {{ event.title }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="scheduledDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Scheduled Date</mat-header-cell>
+          <mat-cell *matCellDef="let event">
+            {{ event.scheduledDateTime.toDate() | date:'yyyy/MM/dd h:mm:ss a' }}
+          </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="team1">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Team 1</mat-header-cell>
+          <mat-cell *matCellDef="let event">
+            {{ event.team1.name }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="team2">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Team 2</mat-header-cell>
+          <mat-cell *matCellDef="let event">
+            {{ event.team2.name }}
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" class="animate"></mat-row>
+      </mat-table>
+    </div>
+
+  </mat-card-content>
+</mat-card>

@@ -18,6 +18,7 @@ import { MaterialModule } from './core/module/material.module';
 import { MatchComponent } from './ui/pages/match/match.component';
 import { HomeComponent } from './ui/pages/home/home.component';
 import { NotFoundComponent } from './ui/widget/not-found/not-found.component';
+import { MatchOverviewComponent } from './ui/pages/match-overview/match-overview.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { NotFoundComponent } from './ui/widget/not-found/not-found.component';
     SidenavComponent,
     MatchComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    MatchOverviewComponent
   ],
   imports: [
     BrowserModule,
