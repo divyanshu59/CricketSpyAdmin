@@ -1,11 +1,11 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {AngularFirestore} from '@angular/fire/firestore';
-import {UserModel} from '../../../model/user.model';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatSort} from '@angular/material/sort';
-import {Observable} from 'rxjs';
-import {take} from 'rxjs/operators';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { UserModel } from '../../../model/user.model';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-match-overview',
@@ -66,5 +66,9 @@ export class MatchOverviewComponent implements OnInit {
       this.dataSource.sort = this.sort;
       this.isLoading = false;
     });
+  }
+
+  trackByUid(index, item) {
+    return item.uid;
   }
 }

@@ -22,6 +22,7 @@ export class UsersComponent implements OnInit {
   loading: Boolean = true;
 
   applyFilter(filterValue: string) {
+    console.log(filterValue.trim());
     filterValue = filterValue.trim();
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
@@ -29,8 +30,9 @@ export class UsersComponent implements OnInit {
 
   // On input focus: setup filterPredicate to only filter by input column
   setupFilter(column: string) {
+
     this.dataSource.filterPredicate = (d: any, filter: string) => {
-      const name = d['user'].name;
+      const name = d.name;
       const textToSearch = name && name.toLowerCase() || '';
       return textToSearch.indexOf(filter) !== -1;
     };
@@ -54,6 +56,7 @@ export class UsersComponent implements OnInit {
       this.dataSource.sort = this.sort;
       this.loading = false;
     });
+
 
   }
 
