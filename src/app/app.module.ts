@@ -20,6 +20,7 @@ import { HomeComponent } from './ui/pages/home/home.component';
 import { NotFoundComponent } from './ui/widget/not-found/not-found.component';
 import { MatchOverviewComponent } from './ui/pages/match-overview/match-overview.component';
 import { LoadingComponent } from './ui/widget/loading/loading.component';
+import { LogoutComponent } from './ui/widget/logout/logout.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { LoadingComponent } from './ui/widget/loading/loading.component';
     HomeComponent,
     NotFoundComponent,
     MatchOverviewComponent,
-    LoadingComponent
+    LoadingComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

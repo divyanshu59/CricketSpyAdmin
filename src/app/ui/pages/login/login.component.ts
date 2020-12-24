@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../../service/auth.service';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import {AuthService} from '../../../service/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, public router: Router) { }
 
   email: string;
   password: string;
@@ -19,6 +20,8 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.authService.loginWithEmailAndPassword(this.email, this.password).then(displayName => {
       // User Logged In
+      this.router.navigate(['']);
+
     }).catch(error => {
       console.log(error);
     });
