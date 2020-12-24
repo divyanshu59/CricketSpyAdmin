@@ -13,7 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 const modules = [
@@ -31,6 +31,8 @@ const modules = [
   MatTooltipModule,
   MatSidenavModule,
   MatNativeDateModule,
+  MatProgressSpinnerModule,
+
 
 ];
 

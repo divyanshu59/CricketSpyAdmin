@@ -19,6 +19,7 @@ import { MatchComponent } from './ui/pages/match/match.component';
 import { HomeComponent } from './ui/pages/home/home.component';
 import { NotFoundComponent } from './ui/widget/not-found/not-found.component';
 import { MatchOverviewComponent } from './ui/pages/match-overview/match-overview.component';
+import { LoadingComponent } from './ui/widget/loading/loading.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MatchOverviewComponent } from './ui/pages/match-overview/match-overview
     MatchComponent,
     HomeComponent,
     NotFoundComponent,
-    MatchOverviewComponent
+    MatchOverviewComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

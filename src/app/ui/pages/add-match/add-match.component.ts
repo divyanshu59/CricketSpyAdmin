@@ -20,6 +20,8 @@ export class AddMatchComponent implements OnInit {
   team1Image = '';
   team2Image = '';
 
+  loading: boolean = false;
+
   constructor(private matchService: MatchService, private imageService: ImageService) {
   }
 
@@ -53,6 +55,7 @@ export class AddMatchComponent implements OnInit {
   async uploadImage(event) {
     return this.imageService.uploadImage(event.target.files[0]).then(imageUrl => {
       console.log(imageUrl)
+      this.loading = false;
       return imageUrl;
     }).catch(e => {
       console.log(e);
@@ -62,12 +65,15 @@ export class AddMatchComponent implements OnInit {
 
 
   async uploadFeatureImage(event) {
+    this.loading = true;
     this.featureImage = await this.uploadImage(event);
   }
   async uploadTeam1Image(event) {
+    this.loading = true;
     this.team1Image = await this.uploadImage(event);
   }
   async uploadTeam2Image(event) {
+    this.loading = true;
     this.team2Image = await this.uploadImage(event);
   }
 

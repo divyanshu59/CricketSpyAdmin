@@ -1,3 +1,5 @@
+<app-loading *ngIf="loading"></app-loading>
+
 <div class="form">
     <h2>New Match</h2>
 
@@ -46,9 +48,3 @@
 
     <button mat-flat-button (click)="addNewMatch()">Add Match</button>
 </div>
-<br>
-team1 = {{team1Image}}
-<br>
-team2 = {{team2Image}}
-<br>
-featuere = {{featureImage}}
