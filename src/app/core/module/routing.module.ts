@@ -17,35 +17,35 @@ const routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    //canActivate: [AngularFireAuthGuard],
+    //data: { authGuardPipe: redirectUnauthorizedToLogin },
   },
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    // canActivate: [AngularFireAuthGuard],
+    // data: { authGuardPipe: redirectUnauthorizedToLogin },
 
   },
   {
     path: 'user',
     component: UsersComponent,
-    canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    // canActivate: [AngularFireAuthGuard],
+    // data: { authGuardPipe: redirectUnauthorizedToLogin },
 
   },
   {
     path: 'add-match',
     component: AddMatchComponent,
-    canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    // canActivate: [AngularFireAuthGuard],
+    // data: { authGuardPipe: redirectUnauthorizedToLogin },
 
   },
   {
     path: 'match',
     component: MatchComponent,
-    canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    // canActivate: [AngularFireAuthGuard],
+    // data: { authGuardPipe: redirectUnauthorizedToLogin },
 
   },
   {
@@ -60,7 +60,7 @@ const routes = [
     path: 'match-overview/:id',
     component: MatchOverviewComponent,
     canActivate: [AngularFireAuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin },
+    // data: { authGuardPipe: redirectUnauthorizedToLogin },
 
   },
   {
